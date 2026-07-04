@@ -1,0 +1,130 @@
+# WoW 双采自动化脚本配置文件
+
+# 游戏窗口设置
+game:
+  # 游戏窗口标题
+  window_title: "World of Warcraft"
+  # 游戏分辨率
+  resolution:
+    width: 1920
+    height: 1080
+
+# 角色配置
+characters:
+  # 第一个角色
+  character1:
+    name: "主号"
+    account: "account1"
+    password: "password1"
+    # 采集职业：mining（采矿）、herbalism（草药）、both（双采）
+    professions: "both"
+    # 启用此角色
+    enabled: true
+
+  # 第二个角色
+  character2:
+    name: "副号"
+    account: "account2"
+    password: "password2"
+    professions: "both"
+    enabled: true
+
+# 路线配置
+routes:
+  # 使用的地图
+  zone: "solace_basin"  # 索拉查盆地
+  # 路线类型：循环（loop）、来回（round_trip）
+  route_type: "loop"
+  # 每个点停留时间（秒）
+  stop_duration: 2
+  # 运动速度（像素/秒）
+  move_speed: 100
+
+# 采集配置
+farming:
+  # 采矿配置
+  mining:
+    # 启用采矿
+    enabled: true
+    # 采矿阈值（识别采矿点的相似度）
+    detection_threshold: 0.8
+    # 采矿技能快捷键
+    hotkey: "1"
+    # 最小采矿等级
+    min_level: 1
+
+  # 草药采集配置
+  herbalism:
+    # 启用草药采集
+    enabled: true
+    # 草药阈值（识别草药点的相似度）
+    detection_threshold: 0.8
+    # 草药采集技能快捷键
+    hotkey: "2"
+    # 最小草药等级
+    min_level: 1
+
+# 战斗配置
+combat:
+  # 启用自动逃脱
+  enabled: true
+  # 敌人检测阈值
+  enemy_detection_threshold: 0.7
+  # 逃脱方式：mount（上马）、run（奔跑）
+  escape_method: "mount"
+  # 上马快捷键
+  mount_hotkey: "3"
+  # 战斗检测敏感度（0-1）
+  sensitivity: 0.5
+
+# 视觉识别配置
+vision:
+  # 启用图像识别
+  enabled: true
+  # 识别更新间隔（秒）
+  update_interval: 0.5
+  # 采矿点颜色范围（HSV）
+  mining_color:
+    h: [0, 30]
+    s: [50, 255]
+    v: [50, 255]
+  # 草药点颜色范围（HSV）
+  herbalism_color:
+    h: [80, 130]
+    s: [50, 255]
+    v: [50, 255]
+
+# 导航配置
+navigation:
+  # 启用自动导航
+  enabled: true
+  # 目标点到达距离（像素）
+  arrival_distance: 20
+  # 路径规划算法：astar（A*）、djkstra（迪杰斯特拉）
+  algorithm: "astar"
+
+# 日志配置
+logging:
+  # 日志级别：DEBUG、INFO、WARNING、ERROR、CRITICAL
+  level: "INFO"
+  # 日志文件
+  file: "logs/bot.log"
+  # 是否输出到控制台
+  console: true
+  # 日志格式
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# 其他配置
+settings:
+  # 启用调试模式
+  debug: false
+  # 最大运行时间（分钟，0 表示无限制）
+  max_runtime: 0
+  # 休息间隔（分钟，在此间隔后自动停止休息）
+  rest_interval: 60
+  # 休息时长（分钟）
+  rest_duration: 5
+  # 启用截图记录
+  screenshot_enabled: false
+  # 截图保存目录
+  screenshot_dir: "screenshots/"
