@@ -1,0 +1,9 @@
+pyautogui==0.9.53
+opencv-python==4.8.1.78
+numpy==1.24.3
+pyyaml==6.0
+Pillow==10.0.0
+python-dotenv==1.0.0
+requests==2.31.0
+pywin32==306
+pynput==1.7.6
